@@ -4,7 +4,7 @@ HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and t
 This repository also contains 'test' data for some HL7 AU IGs, used to test fail cases. This data not conform to HL7 AU FHIR Implementation Guides. 
 
 ## Synthetic Data Properties
-- Patients, Practitioners, PractitionerRoles, Organizations are not generated from a real world set. Any correspondence to real people is entirely accidental.
+- Patients, Practitioners, PractitionerRoles, Organizations, and Healthcare Services are not generated from a real world set. Any correspondence to real entities is entirely accidental.
 - Resources with an IHI, HPI-I, or HPI-O have been provided by Services Australia and are present in the HI Vendor Test Environment. These resources may be in tests within that environment.
 - Australian phone numbers are from the reserved set provided by the Australian Communications and Media Authority for use in creative works.
 - Email addresses use the following domains set aside for development and testing: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'.
@@ -14,25 +14,36 @@ This repository also contains 'test' data for some HL7 AU IGs, used to test fail
 - Medicare Card Numbers and DVA numbers are provided by Services Australia for test purposes.
 - Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia for test purposes.
 - ABNs present in the data for fictious organisations are not valid ABNs, i.e. they will not pass validity checks.
-- Data in clinical resources e.g. AllergyIntolerance is not generated from a real world set.
+- Data in clinical resources e.g. AllergyIntolerance are not generated from a real world set.
 
 ## How to navigate this repository
-Synthetic FHIR JSON files are located: https://github.com/hl7au/au-fhir-test-data/tree/master/generated
-
-Postman collections are located: https://github.com/hl7au/au-fhir-test-data/tree/master/Postman
-
-Test FHIR JSON files are located in:
-* https://github.com/hl7au/au-fhir-test-data/tree/master/au-core-inferno-tests
+Synthetic FHIR test data (JSON) files are located in: 
+* [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) folder
+* [direct-fhir-test-resources] (https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) folder
 * coming soon for AU eRequesting
+
+Postman collection import files containing a selection of AU Core and AU eRequesting Test Data are located in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) folder
+* [Sparked AUCore Test Data.postman_collection.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUCore%20Test%20Data.postman_collection.json)
+* [Sparked AUeRequesting Test Data.postman_collection.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUeRequesting%20Test%20Data.postman_collection.json)
+
+Sample Postman environment import files are also located in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) folder:
+* [Sparked AUCore Test Data.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUCore%20Test%20Data.postman_environment.json)
+* [Sparked eReq FHIR Server Filler.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20eReq%20FHIR%20Server%20Filler.postman_environment.json)
+* [Sparked eReq FHIR Server Placer.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20eReq%20FHIR%20Server%20Placer.postman_environment.json)
 
 This repository also contains source code for the command line utilities used to generate the FHIR JSON files and upload them to a FHIR Server. These utilities have been developed using DotNet. For further details see [Test Data Command Line Utilities](#test-data-command-line-utilities) below.
 
 ## Sparked AU Core Testing
-We suggest using the [Sparked Test Data Postman collection](https://github.com/hl7au/au-fhir-test-data/blob/master/Postman/Sparked%20Test%20Data.postman_collection.json).
+We suggest using the [Sparked Test Data Postman collection](https://github.com/hl7au/au-fhir-test-data/blob/master/Postman/Sparked%20Test%20Data.postman_collection.json) which contains:
+* AU Core profiles, a selection of resources from the [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) folders, including resource instances with missing data and suppressed data.
+* AU Base Coverage resources. (coming soon)
+* AU Base Healthcare Service resources. (coming soon)
+* AU Base Related Person resource(s). (coming soon)
+* AU Base Specimen resource(s). (coming soon)
 
-This collection contains a selection of resources from the [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) folders.
+Currently, this Postman collection does not contain non-conformant resources for negative testing.
 
-If you would like to upload all the Sparked Test Data set to your FHIR server, use the UploadGenerated.bat and UploadDirect.bat batch files. Refer to the instructions below in the section [Upload Data](https://github.com/hl7au/au-fhir-test-data/blob/master/README.md#upload-data).
+If you would like to upload the Sparked generated or addition test data sets into your FHIR server by using the FHIR REST updateCreate (PUT) interaction, use the UploadGenerated.bat and UploadDirect.bat batch files (.sh files coming). Refer to the instructions below in the section [Upload Data](https://github.com/hl7au/au-fhir-test-data/blob/master/README.md#upload-data) below.
 
 ## Significant Test Data Test Cases
 The following test data files within the direct-fhir-test-resources folder support testing of significant test cases including missing and suppressed data.
@@ -147,7 +158,7 @@ UploadData.bat fhir-server auth-scheme auth-parameter input-folder resource-type
 
 Example: 
 ```
-UploadData.bat https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic {{base64-encouded-userid:password}} generated Patient
+UploadData.bat https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic {{base64-encouded-userid:password}} generated Patient
 ```
 
 #### Upload all generated data
@@ -161,7 +172,7 @@ UploadGenerated.bat fhir-server auth-scheme auth-parameter
 
 Example: 
 ```
-UploadGenerated.bat https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic {{base64-encouded-userid:password}}
+UploadGenerated.bat https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic {{base64-encouded-userid:password}}
 ```
 
 #### Upload all generated eRequesting data
@@ -175,5 +186,5 @@ UploadERequesting.bat fhir-server auth-scheme auth-parameter
 
 Example: 
 ```
-UploadERequesting.bat https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic {{base64-encouded-userid:password}}
+UploadERequesting.bat https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic {{base64-encouded-userid:password}}
 ```
