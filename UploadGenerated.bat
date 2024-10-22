@@ -9,6 +9,16 @@ pause
 Sparked.TestDataClient\TestDataClient.exe Patient extra %1 %2 %3
 pause
 
+Sparked.TestDataClient\TestDataClient.exe HealthcareService generated %1 %2 %3
+pause
+Sparked.TestDataClient\TestDataClient.exe HealthcareService extra %1 %2 %3
+pause
+
+Sparked.TestDataClient\TestDataClient.exe RelatedPerson generated %1 %2 %3
+pause
+Sparked.TestDataClient\TestDataClient.exe RelatedPerson extra %1 %2 %3
+pause
+
 Sparked.TestDataClient\TestDataClient.exe Practitioner generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe Practitioner extra %1 %2 %3
