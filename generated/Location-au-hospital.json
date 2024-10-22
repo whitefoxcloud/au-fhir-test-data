@@ -36,7 +36,6 @@
     }
   ],
   "address": {
-    
     "line": [
       "54301 Stanley St"
     ],
@@ -53,8 +52,5 @@
         "display": "Site"
       }
     ]
-  },
-  "managingOrganization": {
-    "reference": "Organization/hospital-au"
   }
 }

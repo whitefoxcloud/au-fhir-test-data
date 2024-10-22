@@ -1,0 +1,24 @@
+{
+    "resourceType": "Specimen",
+    "id": "specimen-blood-group-baratz-toni",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2024-09-11T09:39:59.679+00:00",
+        "source": "#oXS5z1ESsYnTfBJG"
+    },
+    "type": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "122555007",
+                "display": "Venous blood specimen"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/baratz-toni"
+    },
+    "collection": {
+        "collectedDateTime": "2015-06-12"
+    }
+}
