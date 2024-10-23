@@ -42,21 +42,5 @@
   "recordedDate": "2023-05-11",
   "asserter": {
     "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
-  },
-  "reaction": [
-    {
-      "manifestation": [
-        {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "247472004",
-              "display": "Hives"
-            }
-          ]
-        }
-      ],
-      "severity": "moderate"
-    }
-  ]
+  }
 }

@@ -12,22 +12,17 @@
         "coding": [
           {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "MC",
-            "display": "Patient's Medicare number"
+            "code": "PPN"
           }
         ],
-        "text": "Medicare Number"
+        "text": "Passport Number"
       },
-      "system": "http://ns.electronichealth.net.au/id/medicare-number",
-      "value": "1234567892",
-      "period": {
-        "end": "2024-05"
-      }
+      "system": "http://hl7.org/fhir/sid/passport-ITA",
+      "value": "IT1111111"
     }
   ],
   "name": [
     {
-      "text": "Ms Sofia Italia",
       "family": "Italia",
       "given": [
         "Sofia"

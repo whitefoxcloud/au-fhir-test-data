@@ -34,16 +34,11 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "386661006",
-          "display": "Fever"
+          "code": "278414003",
+          "display": "Pain management"
         }
       ],
-      "text": "Fever"
-    }
-  ],
-  "reasonReference": [
-    {
-      "reference": "Condition/fever"
+      "text": "Pain management"
     }
   ],
   "dosageInstruction": [
