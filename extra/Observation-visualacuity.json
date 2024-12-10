@@ -1,0 +1,97 @@
+{
+    "resourceType": "Observation",
+    "id": "visualacuity",
+    "meta": {
+        "versionId": "4",
+        "lastUpdated": "2024-12-10T09:37:23.120+00:00",
+        "source": "#sVmRoScwsqyXjT6X",
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult"
+        ]
+    },
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "exam"
+                }
+            ],
+            "text": "Vision"
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "251739003"
+            }
+        ],
+        "text": "Distance visual acuity"
+    },
+    "subject": {
+        "reference": "Patient/baratz-toni"
+    },
+    "effectiveDateTime": "2024-05-23",
+    "performer": [
+        {
+            "reference": "Practitioner/cooke-arthur",
+            "display": "Dr. Arthur Cooke"
+        }
+    ],
+    "valueCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "422256009",
+                "display": "Counts fingers - distance vision"
+            }
+        ]
+    },
+    "bodySite": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "362503005"
+            }
+        ],
+        "text": "Entire left eye"
+    },
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "363788007",
+                        "display": "Clinical history/examination observable"
+                    }
+                ],
+                "text": "Method"
+            },
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "258435002",
+                        "display": "Tumour tissue specimen"
+                    }
+                ]
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "363787002",
+                        "display": "Observable entity"
+                    }
+                ],
+                "text": "Result"
+            },
+            "valueString": "20/40"
+        }
+    ]
+}

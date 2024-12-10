@@ -6,6 +6,8 @@ IF %3.==. GOTO No1
 
 Sparked.TestDataClient\TestDataClient.exe Organization generated %1 %2 %3
 pause
+Sparked.TestDataClient\TestDataClient.exe Organization extra %1 %2 %3
+pause
 Sparked.TestDataClient\TestDataClient.exe Location generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe Location generated %1 %2 %3
@@ -32,13 +34,19 @@ Sparked.TestDataClient\TestDataClient.exe Condition generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe Encounter generated %1 %2 %3
 pause
+Sparked.TestDataClient\TestDataClient.exe Encounter extra %1 %2 %3
+pause
 Sparked.TestDataClient\TestDataClient.exe Condition generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe Encounter generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe Immunization generated %1 %2 %3
 pause
+Sparked.TestDataClient\TestDataClient.exe Immunization extra %1 %2 %3
+pause
 Sparked.TestDataClient\TestDataClient.exe Observation generated %1 %2 %3
+pause
+Sparked.TestDataClient\TestDataClient.exe Observation extra %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe Procedure generated %1 %2 %3
 pause
@@ -47,6 +55,8 @@ pause
 Sparked.TestDataClient\TestDataClient.exe Medication generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe MedicationRequest generated %1 %2 %3
+pause
+Sparked.TestDataClient\TestDataClient.exe MedicationRequest extra %1 %2 %3
 
 GOTO End1
 
