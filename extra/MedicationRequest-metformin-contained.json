@@ -1,0 +1,42 @@
+{
+    "resourceType": "MedicationRequest",
+    "id": "metformin-contained",
+    "meta": {
+        "versionId": "5",
+        "lastUpdated": "2024-12-10T11:36:19.915+00:00",
+        "source": "#HquElRzpHRzXUWNM",
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest"
+        ]
+    },
+    "status": "active",
+    "intent": "order",
+    "medicationReference": {
+        "reference": "Medication/1active-ingredient"
+    },
+    "subject": {
+        "reference": "Patient/hayes-arianne"
+    },
+    "authoredOn": "2024-06-07",
+    "requester": {
+        "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+    },
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "44054006",
+                    "display": "Type 2 diabetes mellitus"
+                }
+            ],
+            "text": "Diabetes mellitus type 2"
+        }
+    ],
+    "reasonReference": [
+        {
+            "reference": "Condition/jaundice",
+            "display": "Neonatal jaundice"
+        }
+    ]
+}
